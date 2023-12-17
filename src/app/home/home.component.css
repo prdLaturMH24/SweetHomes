@@ -1,8 +1,11 @@
-img {
-    height: 75px;
-    width: 75px;
+.results {
+    display: grid;
+    column-gap: 14px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+    margin-top: 50px;
+    justify-content: space-around;
 }
-
 
 input[type="text"] {
     border: solid 1px black;
@@ -21,8 +24,19 @@ button {
     border-radius: 8px;
 }
 
+
 @media (min-width: 500px) and (max-width: 768px) {
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     input[type="text"] {
         width: 70%;
+    }
+}
+
+@media (max-width: 499px) {
+    .results {
+        grid-template-columns: 1fr;
     }
 }
